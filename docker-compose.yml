@@ -1,7 +1,7 @@
 version: "3"
 services:
   tagger:
-    image: tagger
+    build: .
     ports:
       - "8000:8000"
     volumes:
