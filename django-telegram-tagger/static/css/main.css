@@ -1,0 +1,394 @@
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.ttf") format("truetype"), url("../fonts/Vazir-Regular.woff2") format("woff2");
+}
+a {
+  color: var(--tertiary) !important;
+  transition: all 0.15s ease-in-out !important;
+  user-select: none !important;
+  text-decoration: none !important;
+}
+a:hover, a:focus {
+  color: var(--quaternary) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+h1, h3 {
+  color: var(--tertiary);
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.ttf") format("truetype"), url("../fonts/Vazir-Regular.woff2") format("woff2");
+}
+a {
+  color: var(--tertiary) !important;
+  transition: all 0.15s ease-in-out !important;
+  user-select: none !important;
+  text-decoration: none !important;
+}
+a:hover, a:focus {
+  color: var(--quaternary) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+h1, h3 {
+  color: var(--tertiary);
+}
+
+.dark {
+  transition: all 0.15s ease-in-out;
+  --primary: rgb(48, 48, 48);
+  --secondary: rgb(168, 168, 168);
+  --tertiary: rgb(232, 232, 232);
+  --quaternary: rgb(0, 196, 255);
+}
+
+.light {
+  transition: all 0.15s ease-in-out;
+  --primary: rgb(245, 245, 245);
+  --secondary: rgb(168, 168, 168);
+  --tertiary: rgb(48, 48, 48);
+  --quaternary: rgb(0, 196, 255);
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.ttf") format("truetype"), url("../fonts/Vazir-Regular.woff2") format("woff2");
+}
+a {
+  color: var(--tertiary) !important;
+  transition: all 0.15s ease-in-out !important;
+  user-select: none !important;
+  text-decoration: none !important;
+}
+a:hover, a:focus {
+  color: var(--quaternary) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+h1, h3 {
+  color: var(--tertiary);
+}
+
+.dark {
+  transition: all 0.15s ease-in-out;
+  --primary: rgb(48, 48, 48);
+  --secondary: rgb(168, 168, 168);
+  --tertiary: rgb(232, 232, 232);
+  --quaternary: rgb(0, 196, 255);
+}
+
+.light {
+  transition: all 0.15s ease-in-out;
+  --primary: rgb(245, 245, 245);
+  --secondary: rgb(168, 168, 168);
+  --tertiary: rgb(48, 48, 48);
+  --quaternary: rgb(0, 196, 255);
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.ttf") format("truetype"), url("../fonts/Vazir-Regular.woff2") format("woff2");
+}
+a {
+  color: var(--tertiary) !important;
+  transition: all 0.15s ease-in-out !important;
+  user-select: none !important;
+  text-decoration: none !important;
+}
+a:hover, a:focus {
+  color: var(--quaternary) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+h1, h3 {
+  color: var(--tertiary);
+}
+
+.no-animation {
+  animation: none !important;
+  -moz-animation: none !important;
+  -webkit-animation: none !important;
+  -o-animation: none !important;
+  transition: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+}
+
+.svg-logo {
+  fill: var(--tertiary);
+  transition: all 0.15s ease-in-out;
+  min-width: 40px;
+  min-height: 40px;
+}
+.svg-logo:hover, .svg-logo:focus {
+  fill: var(--quaternary);
+  cursor: pointer;
+}
+
+.active {
+  color: var(--secondary) !important;
+  pointer-events: none;
+  cursor: none;
+}
+
+.navbar-btn {
+  color: var(--tertiary);
+  box-shadow: none !important;
+  border: none;
+  font-size: 1.5rem;
+  transition: all 0.15s ease-in-out;
+}
+.navbar-btn:hover, .navbar-btn:focus {
+  color: var(--quaternary);
+}
+
+.pynzix {
+  color: var(--secondary) !important;
+}
+.pynzix:hover, .pynzix:focus {
+  color: var(--quaternary) !important;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.ttf") format("truetype"), url("../fonts/Vazir-Regular.woff2") format("woff2");
+}
+a {
+  color: var(--tertiary) !important;
+  transition: all 0.15s ease-in-out !important;
+  user-select: none !important;
+  text-decoration: none !important;
+}
+a:hover, a:focus {
+  color: var(--quaternary) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+h1, h3 {
+  color: var(--tertiary);
+}
+
+header.header#header .theme-changer {
+  color: var(--tertiary);
+  font-size: 1.5rem;
+  transition: all 0.15s ease-in-out;
+}
+header.header#header .theme-changer:hover, header.header#header .theme-changer:focus {
+  color: var(--quaternary);
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.ttf") format("truetype"), url("../fonts/Vazir-Regular.woff2") format("woff2");
+}
+a {
+  color: var(--tertiary) !important;
+  transition: all 0.15s ease-in-out !important;
+  user-select: none !important;
+  text-decoration: none !important;
+}
+a:hover, a:focus {
+  color: var(--quaternary) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+h1, h3 {
+  color: var(--tertiary);
+}
+
+.reset-btn {
+  background: var(--quaternary);
+  color: var(--primary);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.15s ease-in-out;
+}
+.reset-btn:hover, .reset-btn:focus {
+  color: var(--primary);
+  background: var(--tertiary);
+}
+
+.logout-btn, .login-btn {
+  padding: 0.75rem 1.5rem !important;
+  background: var(--quaternary);
+  color: var(--primary) !important;
+  border-radius: 10px;
+  transition: all 0.15s ease-in-out;
+}
+.logout-btn:hover, .login-btn:hover, .logout-btn:focus, .login-btn:focus {
+  background: var(--tertiary);
+  color: var(--primary) !important;
+}
+
+.submit-btn, .cancel-btn {
+  background: var(--quaternary);
+  color: var(--primary) !important;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.15s ease-in-out;
+}
+.submit-btn:hover, .cancel-btn:hover, .submit-btn:focus, .cancel-btn:focus {
+  background: var(--tertiary);
+  color: var(--primary) !important;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir-Regular.ttf") format("truetype"), url("../fonts/Vazir-Regular.woff2") format("woff2");
+}
+a {
+  color: var(--tertiary) !important;
+  transition: all 0.15s ease-in-out !important;
+  user-select: none !important;
+  text-decoration: none !important;
+}
+a:hover, a:focus {
+  color: var(--quaternary) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+  padding: 0;
+  margin: 0;
+}
+
+h2, h4, h5, h6 {
+  color: var(--secondary);
+}
+
+h1, h3 {
+  color: var(--tertiary);
+}
+
+form p {
+  color: var(--secondary) !important;
+}
+form label, form input, form textarea, form select {
+  color: var(--tertiary) !important;
+}
+form input, form textarea {
+  box-shadow: none !important;
+  background: none !important;
+  border-width: 2px !important;
+  border-color: var(--secondary) !important;
+  transition: all 0.15s ease-in-out !important;
+}
+form input:hover, form input:focus, form textarea:hover, form textarea:focus {
+  border-color: var(--quaternary) !important;
+}
+form select {
+  background: var(--primary) !important;
+  border-color: var(--secondary) !important;
+  border-width: 2px !important;
+  transition: all 0.15s ease-in-out !important;
+}
+form select:hover, form select:focus {
+  border-color: var(--quaternary) !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+form select option {
+  background: var(--primary) !important;
+}
+form textarea {
+  min-height: 10rem !important;
+  resize: none !important;
+}
+form .select-box::after {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--tertiary);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.75rem;
+  content: "";
+  z-index: 98;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--tertiary);
+  background: var(--primary);
+  font-size: 3rem;
+  z-index: 1000;
+}
+.loader i {
+  animation: rotate 2s linear infinite;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  background: var(--primary);
+  color: var(--tertiary);
+}
+
+/*# sourceMappingURL=main.css.map */

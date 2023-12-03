@@ -1,0 +1,17 @@
+@import "global";
+
+.dark {
+  transition: $transition;
+  --primary: rgb(48, 48, 48);
+  --secondary: rgb(168, 168, 168);
+  --tertiary: rgb(232, 232, 232);
+  --quaternary: rgb(0, 196, 255);
+}
+
+.light {
+  transition: $transition;
+  --primary: rgb(245, 245, 245);
+  --secondary: rgb(168, 168, 168);
+  --tertiary: rgb(48, 48, 48);
+  --quaternary: rgb(0, 196, 255);
+}

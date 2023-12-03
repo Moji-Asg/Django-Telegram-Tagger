@@ -1,0 +1,19 @@
+version: "3"
+services:
+  tagger:
+    image: tagger
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./db/:/code/db/
+    tty: true
+    stdin_open: true
+    environment:
+      - "DOMAIN={SERVER IP OR DOMAIN}:{SERVER IP CONNECTED TO CONTAINER OR 8000}"
+    depends_on:
+      - migration
+  migration:
+    image: tagger
+    command: migrate --noinput
+    volumes:
+      - ./db/:/code/db/

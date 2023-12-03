@@ -1,0 +1,51 @@
+@import "../vars/global";
+
+.reset-btn {
+  background: var(--quaternary);
+  color: var(--primary);
+  border: none;
+  border-radius: 10px;
+  transition: $transition;
+
+  &:hover,
+  &:focus {
+    color: var(--primary);
+    background: var(--tertiary);
+  }
+}
+
+.logout-btn {
+  padding: 0.75rem 1.5rem !important;
+  background: var(--quaternary);
+  color: var(--primary) !important;
+  border-radius: 10px;
+  transition: $transition;
+
+  &:hover,
+  &:focus {
+    background: var(--tertiary);
+    color: var(--primary) !important;
+  }
+}
+
+.login-btn {
+  @extend .logout-btn
+}
+
+.submit-btn {
+  background: var(--quaternary);
+  color: var(--primary) !important;
+  border: none;
+  border-radius: 10px;
+  transition: $transition;
+
+  &:hover,
+  &:focus {
+    background: var(--tertiary);
+    color: var(--primary) !important;
+  }
+}
+
+.cancel-btn {
+  @extend .submit-btn;
+}

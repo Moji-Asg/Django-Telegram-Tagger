@@ -1,0 +1,32 @@
+{% extends 'shared/_base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block theme %}{{ theme }}{% endblock %}
+
+{% block header %}
+    {% with use_header=False %}
+        {{ block.super }}
+    {% endwith %}
+
+    <header class="header pt-2 position-absolute min-vw-100" id="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-start">
+                    <a href="{% url 'auth-page' %}" class="d-inline-block login-btn">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <section class="content" id="content">
+        <div class="d-flex justify-content-center align-items-center min-vh-100 text-center">
+            <div>
+                <h1 class="display-1">Tagger</h1>
+                <h4 class="display-6">Made by <a class="pynzix" href="https://www.pynzix.com">PynziX</a></h4>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,55 @@
+@import "themes";
+@import "global";
+
+.no-animation {
+  animation: none !important;
+  -moz-animation: none !important;
+  -webkit-animation: none !important;
+  -o-animation: none !important;
+
+  transition: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+}
+
+.svg-logo {
+  fill: var(--tertiary);
+  transition: $transition;
+  min-width: 40px;
+  min-height: 40px;
+
+  &:hover,
+  &:focus {
+    fill: var(--quaternary);
+    cursor: pointer;
+  }
+}
+
+.active {
+  color: var(--secondary) !important;
+  pointer-events: none;
+  cursor: none;
+}
+
+.navbar-btn {
+  color: var(--tertiary);
+  box-shadow: none !important;
+  border: none;
+  font-size: 1.5rem;
+  transition: $transition;
+
+  &:hover,
+  &:focus{
+    color: var(--quaternary);
+  }
+}
+
+.pynzix {
+  color: var(--secondary) !important;
+
+  &:hover,
+  &:focus {
+    color: var(--quaternary) !important;
+  }
+}

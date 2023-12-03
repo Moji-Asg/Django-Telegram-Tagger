@@ -1,0 +1,14 @@
+@import "../vars/global";
+
+header.header#header {
+  .theme-changer {
+    color: var(--tertiary);
+    font-size: 1.5rem;
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+      color: var(--quaternary);
+    }
+  }
+}

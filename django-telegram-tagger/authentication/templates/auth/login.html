@@ -1,0 +1,52 @@
+{% extends 'shared/_base.html' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block theme %}{{ theme }}{% endblock %}
+
+{% block header %}
+    {% with use_header=False %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+    <section class="content" id="content">
+        <div class="container-fluid">
+            {% if form.errors %}
+                <div class="row position-absolute mt-5 py-3 min-vw-100">
+                    <div class="col mx-auto py-4 bg-danger text-center">
+                        <h3 dir="rtl" style="color: var(--primary);">Username or password is invalid</h3>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row d-flex justify-content-center align-items-center min-vh-100 min-vw-100">
+                <div class="col col-sm-9 col-md-6 col-lg-4">
+                    <form method="post" dir="rtl">{% csrf_token %}
+                        <div class="container-fluid">
+                            {% for field in form %}
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label class="form-check-label mb-1"
+                                               for="{{ field.auto_id }}">{{ field.label }}</label>
+                                        {{ field }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class="row mb-3">
+                                <div class="col text-center">
+                                    <button class="submit-btn px-3 py-2" type="submit">Sign in</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a href="{% url 'forgot-password-page' %}">Forgot your password?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

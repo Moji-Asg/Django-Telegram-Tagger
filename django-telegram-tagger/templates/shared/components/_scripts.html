@@ -1,0 +1,22 @@
+{% load static %}
+
+<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/filters.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script>
+    $('.theme-changer').on({
+        'click': e => {
+            setTimeout($.post, 100, '{% url "change-theme" %}', {
+                theme: () => {
+                    if ($('body').hasClass('dark')) {
+                        return 'dark';
+                    } else {
+                        return 'light';
+                    }
+                },
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            })
+        }
+    });
+</script>
