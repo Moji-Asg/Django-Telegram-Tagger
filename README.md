@@ -2,7 +2,7 @@
 
 [![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
 
-#### Video Demo: 
+#### Video Demo: https://youtu.be/ZuyJulVJObY
 #### Description: This bot notifies users of telegram group.
 
 ### Table of content
@@ -82,7 +82,7 @@
 
 5. Run Tagger:
    ```commandline
-   python manage.py runserver 0.0.0.0:8000
+   python manage.py runserver 0.0.0.0:8000 --insecure --noreload --skip-checks
    ```
 
 ## Usage
@@ -108,7 +108,7 @@ Then customize anything you want and remember to click save button at the end!
 - `/setpassword`
   - Set password for signing in to settings panel.
   - Only in saved messages
-- `/panel`
+- `/settings`
   - Sends a link to settings panel.
 - `/help`
   - Sends a help message about all commands.
