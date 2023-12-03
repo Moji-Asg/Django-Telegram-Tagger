@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include 'shared/components/_head-metas.html' %}
+
+    {% include 'shared/components/_head-links.html' %}
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body class="no-animation {% block theme %}{% endblock %}">
+{% include 'shared/components/_loader.html' %}
+
+{% block header %}
+    {% if use_header %}
+        {% include 'shared/components/_header.html' with active_link=active_link %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% include 'shared/components/_footer.html' %}
+</body>
+
+{% include 'shared/components/_scripts.html' %}
+
+{% block script %}{% endblock %}
+
+</html>

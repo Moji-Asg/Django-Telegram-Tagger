@@ -1,0 +1,51 @@
+<header class="header" id="header">
+    <nav class="navbar navbar-expand-md mb-5 pt-3">
+        <a class="navbar-brand" href="{% url 'home-page' %}">
+            <svg class="svg-logo" viewBox="0 0 86.81 81.34" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 32.22 1.91
+                         L 59.3 48.82
+                         H 44.68
+                         L 30.91 24.98 0 78.52 1.68 54.8 32.22 1.91
+                         Z"></path>
+                <path d="M 3.83 81.33
+                         l 27.08 -46.91 7.31 12.66 -13.77 23.85
+                         h 61.83l -21.39 10.4
+                         H 3.83
+                         Z"></path>
+                <path d="M 86.81 66.21
+                         H 32.64
+                         l 7.31 -12.66
+                         h 27.53
+                         L 36.57 0
+                         l 19.7 13.32 30.54 52.89
+                         Z"></path>
+            </svg>
+        </a>
+
+        <button class="navbar-toggler navbar-btn ms-2" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-md-auto ms-md-2">
+                <li class="nav-item my-md-0 mx-md-2 mx-auto my-2 d-flex align-items-center">
+                    <button class="nav-link theme-changer">
+                        <i class="fas fa-{% if theme == 'dark' %}sun-bright{% else %}moon{% endif %}"></i>
+                    </button>
+                </li>
+                <li class="nav-item my-md-0 mx-md-2 mx-auto my-2 d-flex align-items-center">
+                    <a class="nav-link{% if active_link == 'responds' %} active{% endif %}" href="{% url 'settings-responds-page' %}">Responds</a>
+                </li>
+                <li class="nav-item my-md-0 mx-md-2 mx-auto my-2 d-flex align-items-center">
+                    <a class="nav-link{% if active_link == 'commands' %} active{% endif %}" href="{% url 'settings-commands-page' %}">Commands</a>
+                </li>
+                <li class="nav-item my-md-0 mx-md-2 mx-auto my-2 d-flex align-items-center">
+                    <a class="nav-link{% if active_link == 'main' %} active{% endif %}" href="{% url 'settings-main-page' %}">Main</a>
+                </li>
+                <li class="nav-item my-md-0 mx-md-2 my-2 mx-auto">
+                    <a class="nav-link logout-btn" href="{% url 'logout-page' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,194 @@
+{% extends 'shared/_base.html' %}
+
+{% block title %}Settings | Main{% endblock %}
+
+{% block theme %}{{ theme }}{% endblock %}
+
+{% block header %}
+    {% with use_header=True active_link='main' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+    <section class="content" id="content">
+        {% if success is not None %}
+            <div class="container-fluid mb-5">
+                <div class="row bg-{% if success is True %}success{% else %}danger{% endif %} py-4">
+                    <div class="col mx-auto text-center">
+                        <h3 dir="rtl" style="color: var(--primary);">
+                            {% if success is True %}
+                                Operations saved successfully!
+                            {% else %}
+                                An error occurred!
+                            {% endif %}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center position-relative">
+                    <h1 class="mb-4">Settings</h1>
+                    <button class="reset-btn px-3 py-2 float-sm-start">Reset</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mx-auto">
+                    <form dir="rtl" method="post">{% csrf_token %}
+                        <div class="container-fluid">
+                            <div class="row mb-5">
+                                <div class="col-12 col-md-6 mx-auto col-lg-5 ms-lg-auto">
+                                    <label class="form-label"
+                                           for="{{ form.admins_list.id_for_label }}">{{ form.admins_list.label }}</label>
+                                    {{ form.admins_list }}
+                                    <p class="form-text ms-2" id="listAdminHelp">
+                                        {% include form.admins_list.help_text %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-12 text-center position-relative">
+                                    <h3 class="mb-4">Global Settings</h3>
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-12 text-center">
+                                    <label class="form-check-label mx-1"
+                                           for="{{ form.tagger_activation.id_for_label }}">{{ form.tagger_activation.label }}</label>
+                                    {{ form.tagger_activation }}
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-12 col-md-6 mx-auto col-lg-5 me-lg-auto mb-4">
+                                    <label class="form-label"
+                                           for="{{ form.tag_speed.id_for_label }}">{{ form.tag_speed.label }}</label>
+                                    {{ form.tag_speed }}
+                                    <p class="form-text ms-2" id="taggerSpeedHelp">
+                                        {% if form.tag_speed.errors %}
+                                            {% for err in form.tag_speed.errors %}
+                                                <span class="text-danger" dir="rtl">{{ err }}</span><br>
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% include form.tag_speed.help_text %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center mb-5">
+                                    <h4>Mention Tag Settings</h4>
+                                </div>
+                                <div class="col-12 col-md-9 mx-auto col-lg-8 mb-5">
+                                    <label class="form-label"
+                                           for="{{ form.mention_tag_text.id_for_label }}">{{ form.mention_tag_text.label }}</label>
+                                    {{ form.mention_tag_text }}
+                                    <p class="form-text ms-2" id="mentionTagTextHelp">
+                                        {% if form.mention_tag_text.errors %}
+                                            {% for err in form.mention_tag_text.errors %}
+                                                <span class="text-danger" dir="rtl">{{ err }}</span><br>
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% include form.mention_tag_text.help_text %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center mb-5">
+                                    <h4>Tag List Settings</h4>
+                                </div>
+                                <div class="col-12 col-md-9 mx-auto col-lg-8 mb-5">
+                                    <label class="form-label"
+                                           for="{{ form.tag_list_text.id_for_label }}">{{ form.tag_list_text.label }}</label>
+                                    {{ form.tag_list_text }}
+                                    <p class="form-text ms-2" id=tagListTextHelp">
+                                        {% if form.tag_list_text.errors %}
+                                            {% for err in form.tag_list_text.errors %}
+                                                <span class="text-danger" dir="rtl">{{ err }}</span><br>
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% include form.tag_list_text.help_text %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center mb-5">
+                                    <h4>Reply Tag Settings</h4>
+                                </div>
+                                <div class="col-12 col-md-9 mx-auto col-lg-8 mb-5">
+                                    <label class="form-label"
+                                           for="{{ form.reply_tag_text.id_for_label }}">{{ form.reply_tag_text.label }}</label>
+                                    {{ form.reply_tag_text }}
+                                    <p class="form-text ms-2" id=replyTagTextHelp">
+                                        {% if form.reply_tag_text.errors %}
+                                            {% for err in form.reply_tag_text.errors %}
+                                                <span class="text-danger" dir="rtl">{{ err }}</span><br>
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% include form.reply_tag_text.help_text %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center mb-5">
+                                    <h4>Auto Tag Settings</h4>
+                                </div>
+                                <div class="col-12 mb-5 text-center">
+                                    <label class="form-check-label mx-1"
+                                           for="{{ form.auto_tag_activation.id_for_label }}">{{ form.auto_tag_activation.label }}</label>
+                                    {{ form.auto_tag_activation }}
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-12 col-md-6 mx-auto col-lg-5 me-lg-auto mb-4 d-flex flex-column justify-content-evenly align-items-center">
+                                    <div class="mb-4 mb-md-0">
+                                        <label class="form-check-label mx-1 mb-2"
+                                               for="{{ form.auto_tag_type.id_for_label }}">{{ form.auto_tag_type.label }}</label>
+                                        <div class="select-box position-relative">
+                                            {{ form.auto_tag_type }}
+                                        </div>
+                                        <p class="form-text ms-2" id="autoTagTypeHelp">
+                                            {% if form.auto_tag_type.errors %}
+                                                {% for err in form.auto_tag_type.errors %}
+                                                    <span class="text-danger" dir="rtl">{{ err }}</span><br>
+                                                {% endfor %}
+                                            {% endif %}
+                                            {% include form.auto_tag_type.help_text %}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <label class="form-check-label mx-1 mb-2"
+                                               for="{{ form.auto_tag_clean.id_for_label }}">{{ form.auto_tag_clean.label }}</label>
+                                        {{ form.auto_tag_clean }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 mx-auto col-lg-5 ms-lg-auto mb-4">
+                                    <label class="form-label mx-1"
+                                           for="{{ form.auto_tag_chats.id_for_label }}">{{ form.auto_tag_chats.label }}</label>
+                                    {{ form.auto_tag_chats }}
+                                    <p class="form-text ms-2" id="autoTagChatsHelp">
+                                        {% if form.auto_tag_chats.errors %}
+                                            {% for err in form.auto_tag_chats.errors %}
+                                                <span class="text-danger" dir="rtl">{{ err }}</span><br>
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% include form.auto_tag_chats.help_text %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row pb-5">
+                                <div class="col-4 ms-auto text-center">
+                                    <button class="submit-btn py-3 px-4" type="submit">Save</button>
+                                </div>
+                                <div class="col-4 me-auto ms-3 ms-sm-0 text-center">
+                                    <a class="d-inline-block cancel-btn py-3 px-4"
+                                       href="{% url 'settings-main-page' %}">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

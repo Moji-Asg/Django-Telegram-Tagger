@@ -1,0 +1,90 @@
+{% extends 'shared/_base.html' %}
+{% load telegramtags %}
+
+{% block title %}Settings | Responds{% endblock %}
+
+{% block theme %}{{ theme }}{% endblock %}
+
+{% block header %}
+    {% with use_header=True active_link='responds' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+    <section class="content" id="content">
+        {% if success is not None %}
+            <div class="container-fluid mb-5">
+                <div class="row bg-{% if success is True %}success{% else %}danger{% endif %} py-4">
+                    <div class="col mx-auto text-center">
+                        <h3 dir="rtl" style="color: var(--primary);">
+                            {% if success is True %}
+                                Operations saved successfully!
+                            {% else %}
+                                An error occurred!
+                            {% endif %}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center position-relative">
+                    <h1 class="mb-4">Responds</h1>
+                    <button class="reset-btn px-3 py-2 float-sm-start">Reset</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mx-auto">
+                    <form dir="rtl" method="post">{% csrf_token %}
+                        <div class="container-fluid">
+                            <div class="row mb-5">
+                                <div class="col-12 text-center position-relative">
+                                    <h3>Responds Settings</h3>
+                                </div>
+                            </div>
+
+                            {% get_groups form as groups %}
+                            {% for group in groups %}
+                                <div class="row mb-5">
+                                    <div class="col-12 text-center mb-5">
+                                        <h4>Responds of {{ group.name }}</h4>
+                                    </div>
+
+                                    {% get_fields_by_group form group as fields %}
+                                    {% for field in fields %}
+                                        <div class="col-12 col-md-6 mx-auto col-lg-5 me-lg-auto mb-4">
+                                            <label class="form-label"
+                                                   for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                            {{ field }}
+                                            <p class="form-text ms-2" id="{% get_area_describedby field %}">
+                                                {% if field.errors %}
+                                                    {% for err in field.errors %}
+                                                        <span class="text-danger" dir="rtl">{{ err }}</span><br>
+                                                    {% endfor %}
+                                                {% endif %}
+                                                {{ field.help_text }}
+                                            </p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                            {% endfor %}
+                            <div class="row pb-5">
+                                <div class="col-4 ms-auto text-center">
+                                    <button class="submit-btn py-3 px-4" type="submit">Save</button>
+                                </div>
+                                <div class="col-4 me-auto ms-3 ms-sm-0 text-center">
+                                    <a class="d-inline-block cancel-btn py-3 px-4"
+                                       href="{% url 'settings-responds-page' %}">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,63 @@
+@import "../vars/global";
+
+form {
+  p {
+    color: var(--secondary) !important;
+  }
+
+  label, input, textarea, select {
+    color: var(--tertiary) !important;
+  }
+
+  input, textarea {
+    box-shadow: none !important;
+    background: none !important;
+    border-width: 2px !important;
+    border-color: var(--secondary) !important;
+    transition: $transition !important;
+
+    &:hover,
+    &:focus {
+      border-color: var(--quaternary) !important;
+    }
+  }
+
+  select {
+    background: var(--primary) !important;
+    border-color: var(--secondary) !important;
+    border-width: 2px !important;
+    transition: $transition !important;
+
+    &:hover,
+    &:focus {
+      border-color: var(--quaternary) !important;
+      box-shadow: none !important;
+      cursor: pointer;
+    }
+
+    option {
+      background: var(--primary) !important;
+    }
+  }
+
+  textarea {
+    min-height: 10rem !important;
+    resize: none !important;
+  }
+
+  .select-box {
+    &::after {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid var(--tertiary);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0.75rem;
+      content: "";
+      z-index: 98;
+    }
+  }
+}
